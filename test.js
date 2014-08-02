@@ -1,6 +1,6 @@
 'use strict';
 var assert = require('assert');
-var semverDiff = require('./index');
+var semverDiff = require('./');
 
 it('should get the semver diff type', function () {
 	assert.strictEqual(semverDiff('0.0.1', '1.0.0'), 'major');
