@@ -1,5 +1,5 @@
 declare module SemverDiff {
-    type ISemverDiffResponse =  "major" | "minor" | "patch" | "prerelease" | "build" | null
+    type ISemverDiffResponse =  "major" | "minor" | "patch" | "prerelease" | "build" | null;
 
     export default function(versionA: string, versionB: string): ISemverDiffResponse;
 }
