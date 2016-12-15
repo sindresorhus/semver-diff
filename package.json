@@ -16,8 +16,11 @@
     "test": "mocha"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
+  "types": "./index.d.ts",
+  "typings": "./index.d.ts",
   "keywords": [
     "semver",
     "version",
