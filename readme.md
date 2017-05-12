@@ -47,6 +47,14 @@ Returns the difference type between two semver versions, or `null` if they're id
 Possible values: `'major'`, `'minor'`, `'patch'`, `'prerelease'`, `'build'`, `null`.
 
 
+## Related
+
+- [latest-semver](https://github.com/sindresorhus/latest-semver) - Get the latest stable semver version from an array of versions
+- [to-semver](https://github.com/sindresorhus/to-semver) - Get an array of valid, sorted, and cleaned semver versions from an array of strings
+- [semver-regex](https://github.com/sindresorhus/semver-regex) - Regular expression for matching semver versions
+- [semver-truncate](https://github.com/sindresorhus/semver-truncate) - Truncate a semver version: `1.2.3` → `1.2.0`
+
+
 ## License
 
 MIT © [Sindre Sorhus](http://sindresorhus.com)
