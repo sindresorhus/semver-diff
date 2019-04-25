@@ -1,27 +1,27 @@
 'use strict';
-var semver = require('semver');
+const semver = require('semver');
 
-module.exports = function (a, b) {
-	if (semver.gt(a, b)) {
-		return null;
+module.exports = (versionA, versionB) => {
+	if (semver.gt(versionA, versionB)) {
+		return;
 	}
 
-	a = semver.parse(a);
-	b = semver.parse(b);
+	versionA = semver.parse(versionA);
+	versionB = semver.parse(versionB);
 
-	for (var key in a) {
+	for (const key of Object.keys(versionA)) {
 		if (key === 'major' || key === 'minor' || key === 'patch') {
-			if (a[key] !== b[key]) {
+			if (versionA[key] !== versionB[key]) {
 				return key;
 			}
 		}
 
 		if (key === 'prerelease' || key === 'build') {
-			if (JSON.stringify(a[key]) !== JSON.stringify(b[key])) {
+			if (
+				JSON.stringify(versionA[key]) !== JSON.stringify(versionB[key])
+			) {
 				return key;
 			}
 		}
 	}
-
-	return null;
 };

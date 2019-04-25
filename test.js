@@ -1,13 +1,13 @@
 'use strict';
-var assert = require('assert');
-var semverDiff = require('./');
+import test from 'ava';
+import semverDiff from '.';
 
-it('should get the semver diff type', function () {
-	assert.strictEqual(semverDiff('0.0.1', '1.0.0'), 'major');
-	assert.strictEqual(semverDiff('0.0.1', '0.1.0'), 'minor');
-	assert.strictEqual(semverDiff('0.0.1', '0.0.2'), 'patch');
-	assert.strictEqual(semverDiff('0.0.1-foo', '0.0.1-foo.bar'), 'prerelease');
-	assert.strictEqual(semverDiff('0.0.1', '0.0.1+foo.bar'), 'build');
-	assert.strictEqual(semverDiff('0.0.1', '0.0.1'), null);
-	assert.strictEqual(semverDiff('0.0.2', '0.0.1'), null);
+test('should get the semver diff type', t => {
+	t.is(semverDiff('0.0.1', '1.0.0'), 'major');
+	t.is(semverDiff('0.0.1', '0.1.0'), 'minor');
+	t.is(semverDiff('0.0.1', '0.0.2'), 'patch');
+	t.is(semverDiff('0.0.1-foo', '0.0.1-foo.bar'), 'prerelease');
+	t.is(semverDiff('0.0.1', '0.0.1+foo.bar'), 'build');
+	t.is(semverDiff('0.0.1', '0.0.1'), undefined);
+	t.is(semverDiff('0.0.2', '0.0.1'), undefined);
 });
