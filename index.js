@@ -1,7 +1,7 @@
 'use strict';
 const semver = require('semver');
 
-module.exports = (versionA, versionB) => {
+export default (versionA, versionB) => {
 	if (semver.gt(versionA, versionB)) {
 		return;
 	}
