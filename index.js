@@ -5,8 +5,7 @@ module.exports = (versionA, versionB) => {
 	versionA = semver.parse(versionA);
 	versionB = semver.parse(versionB);
 
-	const cmpResult = semver.compareBuild(versionA, versionB);
-	if (cmpResult >= 0) {
+	if (semver.compareBuild(versionA, versionB) >= 0) {
 		return;
 	}
 
