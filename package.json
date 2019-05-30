@@ -27,7 +27,7 @@
 		"difference"
 	],
 	"dependencies": {
-		"semver": "^6.0.0"
+		"semver": "^6.1.0"
 	},
 	"devDependencies": {
 		"ava": "^1.4.1",
