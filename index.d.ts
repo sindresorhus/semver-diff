@@ -1,5 +1,13 @@
 declare namespace semverDiff {
-	type Result = 'major' | 'premajor' | 'minor' | 'preminor' | 'patch' | 'prepatch' | 'prerelease' | 'build';
+	type Result =
+		| 'major'
+		| 'premajor'
+		| 'minor'
+		| 'preminor'
+		| 'patch'
+		| 'prepatch'
+		| 'prerelease'
+		| 'build';
 }
 
 /**
