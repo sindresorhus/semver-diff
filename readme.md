@@ -18,11 +18,20 @@ const semverDiff = require('semver-diff');
 semverDiff('1.1.1', '1.1.2');
 //=> 'patch'
 
+semverDiff('1.1.1-foo', '1.1.2');
+//=> 'prepatch'
+
 semverDiff('0.0.1', '1.0.0');
 //=> 'major'
 
+semverDiff('0.0.1-foo', '1.0.0');
+//=> 'premajor'
+
 semverDiff('0.0.1', '0.1.0');
 //=> 'minor'
+
+semverDiff('0.0.1-foo', '0.1.0');
+//=> 'preminor'
 
 semverDiff('0.0.1-foo', '0.0.1-foo.bar');
 //=> 'prerelease'
@@ -44,7 +53,7 @@ semverDiff('0.0.2', '0.0.1');
 
 Returns the difference type between two semver versions, or `undefined` if they're identical or the second one is lower than the first.
 
-Possible values: `'major'`, `'minor'`, `'patch'`, `'prerelease'`, `'build'`, `undefined`.
+Possible values: `'major'`, `'premajor'`, `'minor'`, `'preminor'`, `'patch'`, `'prepatch'`, `'prerelease'`, `'build'`, `undefined`.
 
 
 ## Related
