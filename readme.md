@@ -1,4 +1,4 @@
-# semver-diff [![Build Status](https://travis-ci.org/sindresorhus/semver-diff.svg?branch=master)](https://travis-ci.org/sindresorhus/semver-diff)
+# semver-diff
 
 > Get the diff type of two [semver](https://github.com/npm/node-semver) versions: `0.0.1 0.0.2` → `patch`
 
