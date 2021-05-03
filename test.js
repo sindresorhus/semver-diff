@@ -1,8 +1,7 @@
-'use strict';
 import test from 'ava';
-import semverDiff from '.';
+import semverDiff from './index.js';
 
-test('should get the semver diff type', t => {
+test('main', t => {
 	t.is(semverDiff('0.0.1', '1.0.0'), 'major');
 	t.is(semverDiff('0.0.1', '0.1.0'), 'minor');
 	t.is(semverDiff('0.0.1', '0.0.2'), 'patch');

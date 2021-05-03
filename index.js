@@ -1,7 +1,6 @@
-'use strict';
-const semver = require('semver');
+import semver from 'semver';
 
-module.exports = (versionA, versionB) => {
+export default function semverDiff(versionA, versionB) {
 	versionA = semver.parse(versionA);
 	versionB = semver.parse(versionB);
 
@@ -10,4 +9,4 @@ module.exports = (versionA, versionB) => {
 	}
 
 	return semver.diff(versionA, versionB) || 'build';
-};
+}

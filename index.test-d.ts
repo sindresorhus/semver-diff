@@ -1,4 +1,4 @@
 import {expectType} from 'tsd';
-import semverDiff = require('.');
+import semverDiff, {Difference} from './index.js';
 
-expectType<semverDiff.Result | undefined>(semverDiff('1.1.1', '1.1.2'));
+expectType<Difference | undefined>(semverDiff('1.1.1', '1.1.2'));

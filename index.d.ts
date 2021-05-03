@@ -1,23 +1,21 @@
-declare namespace semverDiff {
-	type Result =
-		| 'major'
-		| 'premajor'
-		| 'minor'
-		| 'preminor'
-		| 'patch'
-		| 'prepatch'
-		| 'prerelease'
-		| 'build';
-}
+export type Difference =
+	| 'major'
+	| 'premajor'
+	| 'minor'
+	| 'preminor'
+	| 'patch'
+	| 'prepatch'
+	| 'prerelease'
+	| 'build';
 
 /**
 Get the diff type of two [semver](https://github.com/npm/node-semver) versions: `0.0.1 0.0.2` → `patch`.
 
-@returns The difference type between two semver versions, or `undefined` if they're identical or the second one is lower than the first.
+@returns The difference type between two semver versions, or `undefined` if they are identical or the second one is lower than the first.
 
 @example
 ```
-import semverDiff = require('semver-diff');
+import semverDiff from 'semver-diff';
 
 semverDiff('1.1.1', '1.1.2');
 //=> 'patch'
@@ -50,9 +48,4 @@ semverDiff('0.0.2', '0.0.1');
 //=> undefined
 ```
 */
-declare function semverDiff(
-	versionA: string,
-	versionB: string
-): semverDiff.Result | undefined;
-
-export = semverDiff;
+export default function semverDiff(versionA: string, versionB: string): Difference | undefined;
