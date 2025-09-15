@@ -2,6 +2,9 @@
 
 > Get the diff type of two [semver](https://github.com/npm/node-semver) versions: `0.0.1 0.0.2` → `patch`
 
+> [!NOTE]
+> Deprecated because the `semver` package now supports this built-in.
+
 ## Install
 
 ```sh
